@@ -120,6 +120,14 @@ class Trie {
         return suggestions;
     }
 
+    /*
+     * @params {string} word - Word to remove
+     * @return void
+     */
+    remove = (word) => {
+        throw new Error('Not implemented yet');
+    }
+
     print = () => {
         this._preorder(this.root);
     }
@@ -137,13 +145,6 @@ class Trie {
         }
     }
 
-    /*
-     * @params {string} word - Word to remove
-     * @return void
-     */
-    remove = (word) => {
-        throw new Error('Not implemented yet');
-    }
 }
 
 export default Trie;

@@ -25,6 +25,7 @@ function App() {
   const insertString = () => {
     const newString = inputRef.current.value;
     trie.add(newString);
+    inputRef.current.value = '';
 
     console.log(`Added ${newString}`);
   }
@@ -62,6 +63,7 @@ function App() {
       <div className="container">
         <div className="row">
           <input
+            className="input-string"
             ref={inputRef}
             onKeyDown={handleSubmit}
             placeholder="Insert string"
@@ -70,11 +72,12 @@ function App() {
             suggestions={suggestions}
           />
           <input
+            className="search-string"
             onChange={(evt) => setSearchQuery(evt.target.value)}
             placeholder="String to search"
           />
-          <button onClick={insertString}>Insert string</button>
-          <button onClick={searchString}>Search string</button>
+          <button className="insert-button" onClick={insertString}>Insert string</button>
+          <button className="search-button" onClick={searchString}>Search string</button>
           <button onClick={printTrie}>Print trie</button>
         </div>
       </div>
